@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d895104c10fa6664c8efc67dba3ee487",
+    "revision": "8882b261bd0e5dff78af3e7a9545a07c",
     "url": "/legitmaxwu.github.io/index.html"
   },
   {
-    "revision": "f94c4505c9e92a9d4b07",
+    "revision": "a50e931a6c9fc8f0879b",
     "url": "/legitmaxwu.github.io/static/css/main.593eb56d.chunk.css"
   },
   {
-    "revision": "b0ddf77debca7e759ceb",
-    "url": "/legitmaxwu.github.io/static/js/2.19749eae.chunk.js"
+    "revision": "50ad4a6a3bb49293f825",
+    "url": "/legitmaxwu.github.io/static/js/2.f9c5b44d.chunk.js"
   },
   {
     "revision": "e928fe768baa9832b5bc57eae021f30c",
-    "url": "/legitmaxwu.github.io/static/js/2.19749eae.chunk.js.LICENSE"
+    "url": "/legitmaxwu.github.io/static/js/2.f9c5b44d.chunk.js.LICENSE"
   },
   {
-    "revision": "f94c4505c9e92a9d4b07",
-    "url": "/legitmaxwu.github.io/static/js/main.7e0cff62.chunk.js"
+    "revision": "a50e931a6c9fc8f0879b",
+    "url": "/legitmaxwu.github.io/static/js/main.20e9ebb3.chunk.js"
   },
   {
     "revision": "13f4eeb117ecd2d10e31",
