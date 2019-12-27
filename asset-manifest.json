@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.2e2a1953.chunk.css",
-    "main.js": "/static/js/main.3a4eb4af.chunk.js",
-    "main.js.map": "/static/js/main.3a4eb4af.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.06363229.js",
-    "runtime-main.js.map": "/static/js/runtime-main.06363229.js.map",
-    "static/js/2.a0f314b0.chunk.js": "/static/js/2.a0f314b0.chunk.js",
-    "static/js/2.a0f314b0.chunk.js.map": "/static/js/2.a0f314b0.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.384c25e15f4135ef15174df20e126e0b.js": "/precache-manifest.384c25e15f4135ef15174df20e126e0b.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.2e2a1953.chunk.css.map": "/static/css/main.2e2a1953.chunk.css.map",
-    "static/js/2.a0f314b0.chunk.js.LICENSE": "/static/js/2.a0f314b0.chunk.js.LICENSE",
-    "static/media/Parallax.scss": "/static/media/sidewalk.f94a4dd8.jpg",
-    "static/media/giraffe.jpg": "/static/media/giraffe.c415e911.jpg"
+    "main.css": "/legitmaxwu.github.io/static/css/main.593eb56d.chunk.css",
+    "main.js": "/legitmaxwu.github.io/static/js/main.7e0cff62.chunk.js",
+    "main.js.map": "/legitmaxwu.github.io/static/js/main.7e0cff62.chunk.js.map",
+    "runtime-main.js": "/legitmaxwu.github.io/static/js/runtime-main.29ac6749.js",
+    "runtime-main.js.map": "/legitmaxwu.github.io/static/js/runtime-main.29ac6749.js.map",
+    "static/js/2.19749eae.chunk.js": "/legitmaxwu.github.io/static/js/2.19749eae.chunk.js",
+    "static/js/2.19749eae.chunk.js.map": "/legitmaxwu.github.io/static/js/2.19749eae.chunk.js.map",
+    "index.html": "/legitmaxwu.github.io/index.html",
+    "precache-manifest.1c46066423de177f64e6fbac64b8c864.js": "/legitmaxwu.github.io/precache-manifest.1c46066423de177f64e6fbac64b8c864.js",
+    "service-worker.js": "/legitmaxwu.github.io/service-worker.js",
+    "static/css/main.593eb56d.chunk.css.map": "/legitmaxwu.github.io/static/css/main.593eb56d.chunk.css.map",
+    "static/js/2.19749eae.chunk.js.LICENSE": "/legitmaxwu.github.io/static/js/2.19749eae.chunk.js.LICENSE",
+    "static/media/Parallax.scss": "/legitmaxwu.github.io/static/media/sidewalk.f94a4dd8.jpg",
+    "static/media/giraffe.jpg": "/legitmaxwu.github.io/static/media/giraffe.c415e911.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.06363229.js",
-    "static/js/2.a0f314b0.chunk.js",
-    "static/css/main.2e2a1953.chunk.css",
-    "static/js/main.3a4eb4af.chunk.js"
+    "static/js/runtime-main.29ac6749.js",
+    "static/js/2.19749eae.chunk.js",
+    "static/css/main.593eb56d.chunk.css",
+    "static/js/main.7e0cff62.chunk.js"
   ]
 }
