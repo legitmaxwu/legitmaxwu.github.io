@@ -1,0 +1,40 @@
+.Parallax {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  .parallax-layer {
+    position: fixed;
+    width: 100%;
+    height: 1000px;
+    background-size: auto 1038px;
+    background-position: bottom center;
+    z-index: -1;
+
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    //GPU
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  #layer-0 {
+    background-image: url("https://i.imgur.com/VwSrVdA.jpg");
+  }
+
+  #layer-1 {
+    background-image: url("https://i.imgur.com/MpeKSUC.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    bottom: -150px;
+    @media only screen and (max-width: 1300px) {
+      bottom: -20px;
+    }
+  }
+}
