@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/legitmaxwu.github.io/static/css/main.593eb56d.chunk.css",
+    "main.js": "/legitmaxwu.github.io/static/js/main.20e9ebb3.chunk.js",
+    "main.js.map": "/legitmaxwu.github.io/static/js/main.20e9ebb3.chunk.js.map",
+    "runtime-main.js": "/legitmaxwu.github.io/static/js/runtime-main.29ac6749.js",
+    "runtime-main.js.map": "/legitmaxwu.github.io/static/js/runtime-main.29ac6749.js.map",
+    "static/js/2.f9c5b44d.chunk.js": "/legitmaxwu.github.io/static/js/2.f9c5b44d.chunk.js",
+    "static/js/2.f9c5b44d.chunk.js.map": "/legitmaxwu.github.io/static/js/2.f9c5b44d.chunk.js.map",
+    "index.html": "/legitmaxwu.github.io/index.html",
+    "precache-manifest.eafa8168169c7d5eeb0132c2373ba86f.js": "/legitmaxwu.github.io/precache-manifest.eafa8168169c7d5eeb0132c2373ba86f.js",
+    "service-worker.js": "/legitmaxwu.github.io/service-worker.js",
+    "static/css/main.593eb56d.chunk.css.map": "/legitmaxwu.github.io/static/css/main.593eb56d.chunk.css.map",
+    "static/js/2.f9c5b44d.chunk.js.LICENSE": "/legitmaxwu.github.io/static/js/2.f9c5b44d.chunk.js.LICENSE",
+    "static/media/Parallax.scss": "/legitmaxwu.github.io/static/media/sidewalk.f94a4dd8.jpg",
+    "static/media/giraffe.jpg": "/legitmaxwu.github.io/static/media/giraffe.c415e911.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.29ac6749.js",
+    "static/js/2.f9c5b44d.chunk.js",
+    "static/css/main.593eb56d.chunk.css",
+    "static/js/main.20e9ebb3.chunk.js"
+  ]
+}
