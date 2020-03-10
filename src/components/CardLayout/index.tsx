@@ -2,13 +2,14 @@
 
 import React from "react";
 import Masonry from "react-masonry-css";
+import { SpringGrid } from "react-stonecutter";
 import { mediaQueries } from "../../shared/config";
 import "./styles.css";
 
-import PhotoCard from "../Cards/PhotoCard";
 import Tabletop from "tabletop";
 
 import styled from "@emotion/styled";
+import { css } from "emotion";
 
 const DesktopView = styled("div")`
   ${mediaQueries.mobile} {
@@ -26,17 +27,26 @@ interface CardLayoutState {
   sheetsData: any;
 }
 
-export class CardLayout extends React.Component<{}, CardLayoutState> {
+interface CardLayoutProps {
+  columns: number;
+  sheetId: string;
+  cardComponent: React.ComponentClass<{ value: any }>;
+}
+
+export class CardLayout extends React.Component<
+  CardLayoutProps,
+  CardLayoutState
+> {
   constructor(props: any) {
     super(props);
     this.state = {
       sheetsData: []
     };
   }
-
   componentDidMount() {
+    const { sheetId } = this.props;
     Tabletop.init({
-      key: "1EwIwb7Vf8hwD80Bj4fW9OlBi-TjNZ7XXRVHx_Ow7lQo",
+      key: sheetId,
       callback: (googleData: any) => {
         this.setState({
           sheetsData: googleData
@@ -46,7 +56,18 @@ export class CardLayout extends React.Component<{}, CardLayoutState> {
     });
   }
 
+  getAutoResponsiveProps() {
+    return {
+      itemMargin: 10,
+      containerWidth: 10,
+      itemClassName: "item",
+      gridWidth: 100,
+      transitionDuration: ".5"
+    };
+  }
+
   render() {
+    const { columns } = this.props;
     return (
       <div>
         <MobileView>
@@ -56,22 +77,50 @@ export class CardLayout extends React.Component<{}, CardLayoutState> {
             columnClassName="my-masonry-grid_column"
           >
             {this.state.sheetsData &&
-              this.state.sheetsData.map((photo: any) => (
-                <PhotoCard value={photo} />
-              ))}
+              this.state.sheetsData.map((row: any) =>
+                React.createElement(this.props.cardComponent, {
+                  value: row
+                })
+              )}
           </Masonry>
         </MobileView>
         <DesktopView>
           <Masonry
-            breakpointCols={3}
+            breakpointCols={columns}
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
             {this.state.sheetsData &&
-              this.state.sheetsData.map((photo: any) => (
-                <PhotoCard value={photo} />
-              ))}
+              this.state.sheetsData.map((row: any) =>
+                React.createElement(this.props.cardComponent, {
+                  value: row
+                })
+              )}
           </Masonry>
+          {/* <SpringGrid
+            component="ul"
+            columns={5}
+            columnWidth={"20%"}
+            gutterWidth={5}
+            gutterHeight={5}
+            itemHeight={200}
+            springConfig={{ stiffness: 170, damping: 26 }}
+          >
+            {this.state.sheetsData &&
+              this.state.sheetsData.map((row: any, i: number) => (
+                <li
+                  key={i}
+                  // className={css`
+                  //   width: 100%;
+                  //   height: 100%;
+                  // `}
+                >
+                  {React.createElement(this.props.cardComponent, {
+                    value: row
+                  })}
+                </li>
+              ))}
+          </SpringGrid> */}
         </DesktopView>
       </div>
     );

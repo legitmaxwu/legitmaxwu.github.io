@@ -27,16 +27,14 @@ const NavItem: React.FC<NavItemProps> = props => {
       to={to}
       className={css`
         display: flex;
-        margin: auto;
         text-decoration: none;
         align-items: center;
-        margin: 20px 25px;
+        padding: 20px 25px;
         text-decoration: none;
         ${itemStyle && {
           ...itemStyle
         }}
         &:hover {
-          font-weight: 700;
           ${itemHoverStyle && { ...itemHoverStyle }};
         }
       `}
@@ -109,6 +107,7 @@ export const Navbar: React.FC<NavbarProps> = props => {
           font-family: ${fonts.comic.heading};
           pointer-events: auto;
           z-index: 100;
+          overflow: scroll;
           ${style && { ...style }}
         `}
       >
@@ -117,19 +116,27 @@ export const Navbar: React.FC<NavbarProps> = props => {
         <ChooseScroll
           itemStyle={{ ...itemStyle }}
           itemHoverStyle={{ ...itemHoverStyle }}
+          to={`/`}
+          scroll={scroll}
+        >
+          go back
+        </ChooseScroll>
+        <ChooseScroll
+          itemStyle={{ ...itemStyle }}
+          itemHoverStyle={{ ...itemHoverStyle }}
           to={`${url}`}
           scroll={scroll}
         >
           home
         </ChooseScroll>
-        <ChooseScroll
+        {/* <ChooseScroll
           itemStyle={{ ...itemStyle }}
           itemHoverStyle={{ ...itemHoverStyle }}
           to={`${url}/projects`}
           scroll={scroll}
         >
           projects
-        </ChooseScroll>
+        </ChooseScroll> */}
         <ChooseScroll
           itemStyle={{ ...itemStyle }}
           itemHoverStyle={{ ...itemHoverStyle }}
@@ -137,6 +144,22 @@ export const Navbar: React.FC<NavbarProps> = props => {
           scroll={scroll}
         >
           art
+        </ChooseScroll>
+        <ChooseScroll
+          itemStyle={{ ...itemStyle }}
+          itemHoverStyle={{ ...itemHoverStyle }}
+          to={`${url}/photography`}
+          scroll={scroll}
+        >
+          photography
+        </ChooseScroll>
+        <ChooseScroll
+          itemStyle={{ ...itemStyle }}
+          itemHoverStyle={{ ...itemHoverStyle }}
+          to={`${url}/friends`}
+          scroll={scroll}
+        >
+          friends' stories
         </ChooseScroll>
       </nav>
     </>

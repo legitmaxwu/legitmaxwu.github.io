@@ -3,9 +3,9 @@ import { css } from "emotion";
 import styled from "@emotion/styled";
 
 import { CardLayout } from "../../../components/CardLayout";
-import PhotoCard from "../../../components/Cards/ArtCard";
+import PhotoCard from "../../../components/Cards/PhotoCard";
 
-export const ArtPage: React.FC = () => {
+export const PhotographyPage: React.FC = () => {
   return (
     <div
       className={css`
@@ -14,8 +14,8 @@ export const ArtPage: React.FC = () => {
       `}
     >
       <CardLayout
-        sheetId="1EwIwb7Vf8hwD80Bj4fW9OlBi-TjNZ7XXRVHx_Ow7lQo"
-        columns={3}
+        sheetId="1Ku9E9p1u52nVzTF71DNqSOCuecB2UK8Odyi8paDw9PI"
+        columns={4}
         cardComponent={PhotoCard}
       />
     </div>

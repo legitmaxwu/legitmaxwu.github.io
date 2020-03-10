@@ -10,14 +10,18 @@ import { colors, fonts } from "../../shared/config";
 
 const Image = styled("img")`
   width: 100%;
+  height: 100%;
   height: auto;
 `;
 
 const ImageHolder = styled("div")`
   width: 100%;
+  height: 100%;
   height: auto;
   position: relative;
 `;
+
+//
 
 const Link = styled("div")`
   color: ${colors.teal};
@@ -27,15 +31,16 @@ const Link = styled("div")`
   }
 `;
 
-interface PhotoCardProps {
+interface ArtCardProps {
   value: {
+    caption: string;
     imageURL: string;
     imageAlt: string;
   };
 }
 
-class PhotoCard extends React.Component<PhotoCardProps, {}> {
-  constructor(props: PhotoCardProps) {
+class ArtCard extends React.Component<ArtCardProps, {}> {
+  constructor(props: ArtCardProps) {
     super(props);
     this.state = {
       showModal: false
@@ -48,7 +53,7 @@ class PhotoCard extends React.Component<PhotoCardProps, {}> {
   }
 
   render() {
-    const { imageURL, imageAlt } = this.props.value;
+    const { caption, imageURL, imageAlt } = this.props.value;
 
     return (
       <Card>
@@ -61,10 +66,27 @@ class PhotoCard extends React.Component<PhotoCardProps, {}> {
           <ImageHolder>
             <Image src={imageURL} alt={imageAlt} />
           </ImageHolder>
+          <div
+            className={css`
+              font-size: 20px;
+              margin: 10px;
+              color: ${colors.black};
+              text-align: center;
+            `}
+          >
+            {caption}
+          </div>
+          {/* <div
+            className={css`
+              text-align: center;
+            `}
+          >
+            <Link onClick={() => this.setModalVisibility(true)}>Read more</Link>
+          </div> */}
         </div>
       </Card>
     );
   }
 }
 
-export default PhotoCard;
+export default ArtCard;

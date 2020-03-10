@@ -18,7 +18,7 @@ class Card extends React.Component {
         <div
           className={css`
             /* margin: 5px; */
-            padding: 30px;
+            padding: 15px;
             background-color: ${colors.white};
             font-style: ${fonts.booky.body};
           `}

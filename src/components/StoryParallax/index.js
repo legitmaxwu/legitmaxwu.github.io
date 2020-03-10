@@ -41,6 +41,7 @@ export default class StoryParallax extends React.Component {
             The Story of Max Wu
           </div>
         </div>
+        {/* <div className="parallax-layer" id="layer-2" data-speed="85"></div> */}
         <div className="parallax-layer" id="layer-1" data-speed="100"></div>
       </div>
     );

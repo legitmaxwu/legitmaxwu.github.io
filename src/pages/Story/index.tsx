@@ -5,6 +5,8 @@ import { Navbar } from "../../components/Navbar";
 
 import { ArtPage } from "./ArtPage";
 import { ProjectsPage } from "./ProjectsPage";
+import { PhotographyPage } from "./PhotographyPage";
+import { FriendsPage } from "./FriendsPage";
 
 import { css } from "emotion";
 import { colors } from "../../shared/config";
@@ -25,7 +27,9 @@ export const StoryPage: React.FC = () => {
           backgroundColor: "transparent"
         }}
         itemStyle={{ color: colors.black, fontWeight: "bold" }}
-        itemHoverStyle={{ color: colors.white }}
+        itemHoverStyle={{
+          color: colors.white
+        }}
         scroll
       />
       <Parallax />
@@ -33,7 +37,11 @@ export const StoryPage: React.FC = () => {
       <Navbar
         style={{ backgroundColor: "rgba(1, 2, 32, 0.7)" }}
         itemStyle={{ color: colors.white }}
-        itemHoverStyle={{ fontWeight: "bold" }}
+        itemHoverStyle={{
+          textShadow: "-0.06ex 0 white, 0.06ex 0 white;",
+          backgroundColor: "rgba(255, 255, 255, 0.1)",
+          transition: "0.3s"
+        }}
       />
 
       <div
@@ -66,7 +74,8 @@ export const StoryPage: React.FC = () => {
                 line-height: 400px;
               `}
             >
-              hint: click 'art'
+              Thanks so much for stopping by! ^_^ This is still a WIP but stay
+              tuned for more content heh. (hint: click 'art' or 'photography')
             </div>
           </Route>
           <Route path={`${path}/projects`}>
@@ -74,6 +83,12 @@ export const StoryPage: React.FC = () => {
           </Route>
           <Route path={`${path}/art`}>
             <ArtPage />
+          </Route>
+          <Route path={`${path}/photography`}>
+            <PhotographyPage />
+          </Route>
+          <Route path={`${path}/friends`}>
+            <FriendsPage />
           </Route>
         </Switch>
       </div>
