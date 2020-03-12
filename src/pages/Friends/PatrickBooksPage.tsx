@@ -50,13 +50,17 @@ interface FoodRatingsProps {
 interface FoodRatingsState {
   sheetsData: any[];
   showImages: boolean;
+  genres: string[];
+  selectedGenre: string;
 }
 class BookRatings extends React.Component<FoodRatingsProps, FoodRatingsState> {
   constructor(props: any) {
     super(props);
     this.state = {
       sheetsData: [],
-      showImages: true
+      showImages: true,
+      genres: [],
+      selectedGenre: "All"
     };
     this.sort = this.sort.bind(this);
   }
@@ -66,8 +70,15 @@ class BookRatings extends React.Component<FoodRatingsProps, FoodRatingsState> {
     Tabletop.init({
       key: sheetId,
       callback: (googleData: any) => {
+        const uniqueGenres = [
+          "All",
+          ...googleData
+            .map((item: any) => item.Genre)
+            .filter((v: any, i: any, a: any) => a.indexOf(v) === i)
+        ];
         this.setState({
-          sheetsData: googleData
+          sheetsData: googleData,
+          genres: uniqueGenres
         });
       },
       simpleSheet: true
@@ -92,9 +103,15 @@ class BookRatings extends React.Component<FoodRatingsProps, FoodRatingsState> {
   }
 
   render() {
-    const { sheetId } = this.props;
-    const { sheetsData } = this.state;
-    if (sheetsData.length == 0) return <></>;
+    const { genres, selectedGenre } = this.state;
+    if (this.state.sheetsData.length == 0) return <></>;
+
+    // filter sheetsData
+    let sheetsData = this.state.sheetsData;
+    if (selectedGenre != "All") {
+      sheetsData = sheetsData.filter((row: any) => row.Genre == selectedGenre);
+    }
+
     return (
       <>
         <div className={css``}>
@@ -114,9 +131,20 @@ class BookRatings extends React.Component<FoodRatingsProps, FoodRatingsState> {
             <button onClick={() => this.sort("Length", true)}>Length ↑</button>
             <button onClick={() => this.sort("Year", false)}>Year ↓</button>
             <button onClick={() => this.sort("Year", true)}>Year ↑</button>
-            <button onClick={() => this.toggleImages()}>
+            <select
+              id="genres"
+              onChange={e => {
+                this.setState({ selectedGenre: e.target.value });
+              }}
+            >
+              {genres.map(g => (
+                <option>{g}</option>
+              ))}
+            </select>
+
+            {/* <button onClick={() => this.toggleImages()}>
               Toggle Showing Images
-            </button>
+            </button> */}
           </div>
 
           {sheetsData.map((row, i) => {

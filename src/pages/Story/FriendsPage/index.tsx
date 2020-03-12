@@ -1,9 +1,23 @@
 import React from "react";
 
 import { css } from "emotion";
+import styled from "@emotion/styled";
 
 import { Link, useRouteMatch } from "react-router-dom";
 
+const StyledLink = styled(Link)`
+  display: flex;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  align-items: center;
+  padding: 20px 25px;
+  text-decoration: none;
+  &:hover {
+    /* font-weight: 700; */
+    text-shadow: 0px 0px 10px white;
+  }
+`;
 export const FriendsPage: React.FC = () => {
   return (
     <div
@@ -12,24 +26,12 @@ export const FriendsPage: React.FC = () => {
         margin: 0 auto;
       `}
     >
-      <Link
-        to={"/emir"}
-        className={css`
-          display: flex;
-          text-decoration: none;
-          text-align: center;
-          color: white;
-          align-items: center;
-          padding: 20px 25px;
-          text-decoration: none;
-          &:hover {
-            /* font-weight: 700; */
-            text-shadow: 0px 0px 10px white;
-          }
-        `}
-      >
+      <StyledLink to={"/emir"} className={css``}>
         Emir's Food Ratings
-      </Link>
+      </StyledLink>
+      <StyledLink to={"/patrick"} className={css``}>
+        Patrick's Book Ratings
+      </StyledLink>
     </div>
   );
 };
