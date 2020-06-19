@@ -4,6 +4,7 @@ import { StoryPage } from "./pages/Story";
 import LandingPage from "./pages/Landing";
 import { EmirFoodPage } from "./pages/Friends/EmirFoodPage";
 import { PatrickBooksPage } from "./pages/Friends/PatrickBooksPage";
+import { CindySmoothiesPage } from "./pages/Friends/CindySmoothiesPage";
 
 class App extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class App extends React.Component {
             <Route exact path="/" component={LandingPage} />
             <Route path="/emir" component={EmirFoodPage} />
             <Route path="/patrick" component={PatrickBooksPage} />
+            <Route path="/cindy" component={CindySmoothiesPage} />
           </Switch>
         </Router>
       </div>

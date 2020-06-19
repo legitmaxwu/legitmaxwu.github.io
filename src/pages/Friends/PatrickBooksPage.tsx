@@ -50,6 +50,7 @@ interface FoodRatingsProps {
 interface FoodRatingsState {
   sheetsData: any[];
   showImages: boolean;
+  showNotes: boolean;
   genres: string[];
   selectedGenre: string;
 }
@@ -59,6 +60,7 @@ class BookRatings extends React.Component<FoodRatingsProps, FoodRatingsState> {
     this.state = {
       sheetsData: [],
       showImages: true,
+      showNotes: true,
       genres: [],
       selectedGenre: "All"
     };
@@ -73,7 +75,9 @@ class BookRatings extends React.Component<FoodRatingsProps, FoodRatingsState> {
         const uniqueGenres = [
           "All",
           ...googleData
-            .map((item: any) => item.Genre)
+            .map((item: any) => item.Genre.split(","))
+            .flat()
+            .map((item: any) => item.trim())
             .filter((v: any, i: any, a: any) => a.indexOf(v) === i)
         ];
         this.setState({
@@ -98,10 +102,6 @@ class BookRatings extends React.Component<FoodRatingsProps, FoodRatingsState> {
     });
   }
 
-  toggleImages() {
-    this.setState({ showImages: !this.state.showImages });
-  }
-
   render() {
     const { genres, selectedGenre } = this.state;
     if (this.state.sheetsData.length == 0) return <></>;
@@ -109,7 +109,11 @@ class BookRatings extends React.Component<FoodRatingsProps, FoodRatingsState> {
     // filter sheetsData
     let sheetsData = this.state.sheetsData;
     if (selectedGenre != "All") {
-      sheetsData = sheetsData.filter((row: any) => row.Genre == selectedGenre);
+      sheetsData = sheetsData.filter((row: any) =>
+        row.Genre.split(",")
+          .map((item: any) => item.trim())
+          .includes(selectedGenre)
+      );
     }
 
     return (
@@ -142,9 +146,20 @@ class BookRatings extends React.Component<FoodRatingsProps, FoodRatingsState> {
               ))}
             </select>
 
-            {/* <button onClick={() => this.toggleImages()}>
+            <button
+              onClick={() =>
+                this.setState({ showNotes: !this.state.showNotes })
+              }
+            >
+              Toggle Showing Notes
+            </button>
+            <button
+              onClick={() =>
+                this.setState({ showImages: !this.state.showImages })
+              }
+            >
               Toggle Showing Images
-            </button> */}
+            </button>
           </div>
 
           {sheetsData.map((row, i) => {
@@ -191,13 +206,19 @@ class BookRatings extends React.Component<FoodRatingsProps, FoodRatingsState> {
                   </div>
                 </RatingBar>
                 <RatingNumber>{row.Rating}</RatingNumber>
-                <Notes>{row.Thoughts}</Notes>
+                <Notes
+                  className={css`
+                    ${!this.state.showNotes && "display: none;"}
+                  `}
+                >
+                  {row.Thoughts}
+                </Notes>
                 <img
                   src={row.imageURL}
                   className={css`
                     transition: 0.3s;
                     max-height: ${this.state.showImages ? "150px" : 0};
-                    object-fit: cover;
+                    object-fit: contain;
                     width: 300px;
                   `}
                 />

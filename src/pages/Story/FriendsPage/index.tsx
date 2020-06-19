@@ -32,6 +32,9 @@ export const FriendsPage: React.FC = () => {
       <StyledLink to={"/patrick"} className={css``}>
         Patrick's Book Ratings
       </StyledLink>
+      <StyledLink to={"/cindy"} className={css``}>
+        Cindy's Homemade Smoothies
+      </StyledLink>
     </div>
   );
 };
