@@ -24,11 +24,11 @@ export const StoryPage: React.FC = () => {
       <Navbar
         style={{
           position: "absolute",
-          backgroundColor: "transparent"
+          backgroundColor: "transparent",
         }}
         itemStyle={{ color: colors.black, fontWeight: "bold" }}
         itemHoverStyle={{
-          color: colors.white
+          color: colors.white,
         }}
         scroll
       />
@@ -40,7 +40,7 @@ export const StoryPage: React.FC = () => {
         itemHoverStyle={{
           textShadow: "-0.06ex 0 white, 0.06ex 0 white;",
           backgroundColor: "rgba(255, 255, 255, 0.1)",
-          transition: "0.3s"
+          transition: "0.3s",
         }}
       />
 
@@ -59,7 +59,7 @@ export const StoryPage: React.FC = () => {
 
       <div
         className={css`
-          min-height: 100vh;
+          min-height: 80vh;
           width: 100%;
           background-color: ${bottomColor};
           z-index: 10;
@@ -71,11 +71,11 @@ export const StoryPage: React.FC = () => {
             <div
               className={css`
                 text-align: center;
-                line-height: 400px;
+                width: 100%;
               `}
             >
-              Thanks so much for stopping by! ^_^ This is still a WIP but stay
-              tuned for more content heh. (hint: click 'art' or 'photography')
+              (WIP) here i will put stuff about me because i'm a narc pls don't
+              judge ;-; also i luv parallax scrolling
             </div>
           </Route>
           <Route path={`${path}/projects`}>

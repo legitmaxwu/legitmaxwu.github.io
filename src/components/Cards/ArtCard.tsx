@@ -12,6 +12,7 @@ const Image = styled("img")`
   width: 100%;
   height: 100%;
   height: auto;
+  border: 1px solid lightgray;
 `;
 
 const ImageHolder = styled("div")`
@@ -43,7 +44,7 @@ class ArtCard extends React.Component<ArtCardProps, {}> {
   constructor(props: ArtCardProps) {
     super(props);
     this.state = {
-      showModal: false
+      showModal: false,
     };
     this.setModalVisibility = this.setModalVisibility.bind(this);
   }
